@@ -18,19 +18,32 @@ public class PersonStorage : IDisposable, IAsyncDisposable
 
     public async Task<Guid?> CreatePerson(string name, int age)
     {
-        //$"INSERT INTO {tableName} (Id, Name, Age) VALUES (@Id, @Name, @Age)";
-        //command.Parameters.AddWithValue();
-        //command.ExecuteNonQueryAsync();
-        throw new NotImplementedException();
+        var personId = Guid.NewGuid();
+        var createQuery = $"INSERT INTO {tableName} (Id, Name, Age) VALUES (@Id, @Name, @Age)";
+
+        await using var command = new SqlCommand(createQuery, connection);
+        command.Parameters.AddWithValue("@Id", personId);
+        command.Parameters.AddWithValue("@Name", name);
+        command.Parameters.AddWithValue("@Age", age);
+        var commandResult = await command.ExecuteNonQueryAsync();
+        if (commandResult == 1)
+            return personId;
+        
+        return null;
     }
 
     public async Task<Person?> GetPerson(Guid id)
     {
-        //$"SELECT Name, Age FROM {tableName} WHERE Id = @id";
-        //await command.ExecuteReaderAsync()
-        //if (commandResult.Read())
-        //commandResult["Name"].ToString()!
-        throw new NotImplementedException();
+        var getQuery = $"SELECT Name, Age FROM {tableName} WHERE Id = @id";
+
+        await using var command = new SqlCommand(getQuery, connection);
+        command.Parameters.AddWithValue("@id", id);
+
+        var commandResult = await command.ExecuteReaderAsync();
+        if (commandResult.Read())
+            return new Person(commandResult["Name"].ToString()!, (int)commandResult["Age"]);
+
+        return null;
     }
 
     public void Dispose()
