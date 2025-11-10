@@ -5,7 +5,7 @@ namespace L03_db_via_ado;
 
 public class StorageTests
 {
-    private readonly Storage storage = new(Consts.GetDbConnectionString());
+    private readonly Storage storage = new(Consts.DefaultConnection);
     
     [Test]
     public async Task OpenConnection_Master_ShouldNotThrow()

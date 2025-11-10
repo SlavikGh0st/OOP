@@ -20,7 +20,7 @@ public class Storage
                               IF OBJECT_ID('{tableName}', 'U') IS NULL
                                 BEGIN
                                     CREATE TABLE {tableName} (
-                                        Id INT NOT NULL PRIMARY KEY IDENTITY,
+                                        Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
                                             Name NVARCHAR(255),
                                             Age INT
                                         );
