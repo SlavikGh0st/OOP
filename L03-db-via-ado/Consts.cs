@@ -6,8 +6,7 @@ public static class Consts
     public const string DefaultDatabase = "master";
     public const string DefaultAuthSchema = "Trusted_Connection=True";
 
-    public static string GetDbConnectionString() =>
-        $"Server={DefaultServer};Database={DefaultDatabase};{DefaultAuthSchema};";
+    public const string DefaultConnection = $"Server={DefaultServer};Database={DefaultDatabase};{DefaultAuthSchema};";
 
     public const string PersonsTable = "Persons";
 }
