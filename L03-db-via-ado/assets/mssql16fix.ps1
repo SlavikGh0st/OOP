@@ -1,0 +1,2 @@
+﻿New-Item -Path 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL16E.LOCALDB\MSSQLServer\Parameters' -Force
+New-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL16E.LOCALDB\MSSQLServer\Parameters' -Name 'SQLArg0' -Value "-T1800" -PropertyType String -Force
