@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L02-serialization", "L02-se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L03-db-via-ado", "L03-db-via-ado\L03-db-via-ado.csproj", "{5FE3C973-E01E-4BB0-8C53-07808378FC07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L04-db-via-ef", "L04-db-via-ef\L04-db-via-ef.csproj", "{6408DB6C-78C8-4A24-8743-70555DDAF65B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{5FE3C973-E01E-4BB0-8C53-07808378FC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FE3C973-E01E-4BB0-8C53-07808378FC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FE3C973-E01E-4BB0-8C53-07808378FC07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6408DB6C-78C8-4A24-8743-70555DDAF65B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6408DB6C-78C8-4A24-8743-70555DDAF65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6408DB6C-78C8-4A24-8743-70555DDAF65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6408DB6C-78C8-4A24-8743-70555DDAF65B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
