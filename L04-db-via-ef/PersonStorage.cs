@@ -29,7 +29,7 @@ public class PersonStorage
         var persons = await storage.Persons.Where(person => person.FirstName == name).ToListAsync();
         return persons;
     }
-    
+
     public async Task Delete(Guid id)
     {
         await storage.Persons.Where(person => person.Id == id).ExecuteDeleteAsync();

@@ -1,7 +1,7 @@
-using L04_db_via_ef.Models;
+﻿using L05_service.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace L04_db_via_ef;
+namespace L05_service.Storage;
 
 public class Db : DbContext
 {
