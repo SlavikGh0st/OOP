@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L03-db-via-ado", "L03-db-vi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L04-db-via-ef", "L04-db-via-ef\L04-db-via-ef.csproj", "{6408DB6C-78C8-4A24-8743-70555DDAF65B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L05-service", "L05-service\L05-service.csproj", "{BCEB4280-D13E-40AC-8B42-A3660BC6CCD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{6408DB6C-78C8-4A24-8743-70555DDAF65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6408DB6C-78C8-4A24-8743-70555DDAF65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6408DB6C-78C8-4A24-8743-70555DDAF65B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCEB4280-D13E-40AC-8B42-A3660BC6CCD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCEB4280-D13E-40AC-8B42-A3660BC6CCD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCEB4280-D13E-40AC-8B42-A3660BC6CCD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCEB4280-D13E-40AC-8B42-A3660BC6CCD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
