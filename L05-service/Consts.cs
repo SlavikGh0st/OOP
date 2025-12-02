@@ -1,4 +1,4 @@
-﻿namespace L04_db_via_ef;
+﻿namespace L05_service;
 
 public static class Consts
 {
