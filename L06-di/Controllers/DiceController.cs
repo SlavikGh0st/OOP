@@ -20,15 +20,15 @@ public class DiceController : ControllerBase
     [HttpGet("")]
     public string Get()
     {
-        return $"Throw '{roller1.DiceId}': {roller1.Roll()}";
+        return $"Roll #{roller1.DiceId}: {roller1.Roll()}";
     }
 
     [HttpGet("x2")]
     public string GetX2()
     {
         var sb = new StringBuilder();
-        sb.AppendLine($"Throw '{roller1.DiceId}': {roller1.Roll()}");
-        sb.AppendLine($"Throw '{roller2.DiceId}': {roller2.Roll()}");
+        sb.AppendLine($"Roll #{roller1.DiceId}: {roller1.Roll()}");
+        sb.AppendLine($"Roll #{roller2.DiceId}: {roller2.Roll()}");
         return sb.ToString();
     }
 
