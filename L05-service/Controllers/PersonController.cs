@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace L05_service.Controllers;
 
-[ApiController]
-[Route("persons")] //нужно придумать путь для доступа к этим методам 
+//[ApiController]
+//[Route("route")] //нужно придумать путь для доступа к этим методам 
 public class PersonController : ControllerBase
 {
     private readonly PersonStorage storage;
@@ -15,42 +15,36 @@ public class PersonController : ControllerBase
         var db = new Db();
         storage = new PersonStorage(db);
     }
-    
-    [HttpPost]
-    [Route("")]
-    [ProducesResponseType(typeof(Person), StatusCodes.Status200OK)]
-    public async Task<ActionResult<Person>> GetPerson([FromBody] Person person)
+
+    //тип HTTP запроса
+    //маршрут Route
+    //описание ответов
+    public async Task<ActionResult<IList<Person>>> SearchPersons( /* что-то должно быть на входе */)
     {
-        var isCreated = await storage.CreatePerson(person);
-        return !isCreated ? Conflict($"Person with {person.Id} already created") : Ok(person);
+        throw new NotImplementedException();
     }
 
-    [HttpGet]
-    [Route("{personId:guid}")]
-    [ProducesResponseType(typeof(Person), StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<Person>> GetPerson([FromRoute] Guid personId)
+    //тип HTTP запроса
+    //маршрут Route
+    //описание ответов
+    public async Task<ActionResult<Person>> CreatePerson( /* что-то должно быть на входе */)
     {
-        var person = await storage.GetPerson(personId);
-        return person == null ? NotFound("Person not found") : Ok(person);
+        throw new NotImplementedException();
     }
-    
-    [HttpGet]
-    [Route("")]
-    [ProducesResponseType(typeof(Person), StatusCodes.Status200OK)]
-    public async Task<ActionResult<IList<Person>>> SearchPersons([FromQuery] string? name)
+
+    //тип HTTP запроса
+    //маршрут Route
+    //описание ответов
+    public async Task<ActionResult<Person>> GetPerson( /* что-то должно быть на входе */)
     {
-        var searchOptions = new PersonSearchFields(name);
-        var persons = await storage.SearchPersons(searchOptions);
-        return Ok(persons);
+        throw new NotImplementedException();
     }
-    
-    [HttpDelete]
-    [Route("{personId:guid}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult> DeletePerson([FromRoute] Guid personId)
+
+    //тип HTTP запроса
+    //маршрут Route
+    //описание ответов
+    public async Task<ActionResult> DeletePerson( /* что-то должно быть на входе */)
     {
-        await storage.Delete(personId);
-        return Ok();
+        throw new NotImplementedException();
     }
 }
