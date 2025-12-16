@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using L06_di_tests.Client;
+using L06_di;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 
@@ -7,9 +8,14 @@ namespace L06_di_tests;
 
 public class DiceTests
 {
-    private void ConfigureContainer(IServiceCollection container)
+    private static void ConfigureContainer(IServiceCollection container)
     {
-        //здесь нужно сконфигурировать DiceClient
+        container.AddSingleton<ILog, ConsoleLog>();
+        container.AddSingleton<DiceClient>(sp =>
+        {
+            var logger = sp.GetRequiredService<ILog>();
+            return new DiceClient(Consts.ServiceAddress, logger);
+        });
     }
 
     [TestCase(1)]
